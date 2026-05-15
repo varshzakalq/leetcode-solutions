@@ -1,34 +1,34 @@
 class Solution {
 public:
     int compress(vector<char>& chars) {
-    int idx = 0;
-    int n = chars.size();
-    for (int i = 0; i < n; )
-    {
-        char ch = chars[i];
-        int count = 0;
-        while (i <n &&chars[i]== ch)
-        {
-            count++; 
-            i++;
-        }
-        if (count == 1)
-        {
-            chars[idx] = ch;
-            idx++;
-        }
-        else{
-            chars[idx++]= ch;
-            string str = to_string(count);
-            for(char dig : str){
-                chars[idx++] = dig;
+
+        int idx = 0; // write index
+
+        for (int i = 0; i < chars.size(); ) {
+
+            char current = chars[i];
+            int count = 0;
+
+            // count frequency
+            while (i < chars.size() && chars[i] == current) {
+                i++;
+                count++;
             }
 
+            // write character
+            chars[idx++] = current;
+
+            // write count if > 1
+            if (count > 1) {
+
+                string s = to_string(count);
+
+                for (char c : s) {
+                    chars[idx++] = c;
+                }
+            }
         }
-        
-        
-    }
-    chars.resize(idx);
-    return idx;
+
+        return idx;
     }
 };
