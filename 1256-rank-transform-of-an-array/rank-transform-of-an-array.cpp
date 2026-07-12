@@ -6,7 +6,7 @@ public:
         unordered_map <int,int> mp;
         int count = 1;
         for(int i =0;i<arr.size();i++){
-            if(!mp[temp[i]]){
+            if(mp.find(temp[i]) == mp.end()){
                  mp[temp[i]] =count++;
                  cout<<i;
             }               
