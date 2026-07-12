@@ -8,7 +8,6 @@ public:
         for(int i =0;i<arr.size();i++){
             if(mp.find(temp[i]) == mp.end()){
                  mp[temp[i]] =count++;
-                 cout<<i;
             }               
         }
         for(int i =0;i<arr.size();i++){
