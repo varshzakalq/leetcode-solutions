@@ -17,16 +17,13 @@ public:
             }
         }
         string ans = "";
-        int count = 0;
-        cout<<s.size()<<"hhh";
+ 
         while(!s.empty()){
-            count++;
             string top = s.top();
-            cout<<top<<" ";
             s.pop();
             ans ="/"+ top +ans;
         }
-        cout<<count;
+
         if(ans == ""){
             return "/";
         }
